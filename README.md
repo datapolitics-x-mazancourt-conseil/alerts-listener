@@ -17,4 +17,4 @@ Ce projet récupère des Alertes Google envoyées dans un boite mail, et identif
 
 - Python 3.7+
 - Docker et un compte hub.docker.com (si vous souhaitez utiliser Docker)
-- Un fichier .env à la racine du projet avec la variable d'environnement BEARER_TOKEN (à récupérer depuis console twitter developers)
+- L'application est conçue pour recevoir et envoyer des mails depuis un compte mail. La configuration du compte mail se fait depuis les variables d'environnement (fichier .env à la racine, par exemple). Les 3 variables suivantes sont attendues : IMAP_HOST (par ex imap.gmail.com), MAIL_USERNAME (par ex toto@gmail.com), MAIL_PASSWORD (par ex monmotdepasseprefere).
