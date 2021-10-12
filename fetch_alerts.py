@@ -24,7 +24,6 @@ def parse_alert(html):
     data_json = json.loads(parser.find_all('script')[0].getText())
     widgets = data_json["cards"][0]["widgets"]
     for widget in widgets:
-        print (widget)
         results.append((widget["title"], widget["description"], "https" + widget["url"].split("https")[2]))
     return results
 
@@ -32,6 +31,8 @@ from imap_tools import MailBox, AND
 alerts = []
 with MailBox(os.environ.get("IMAP_HOST")).login(os.environ.get("MAIL_USERNAME"),os.environ.get("MAIL_PASSWORD")) as mailbox:
     for msg in mailbox.fetch():  # generator: imap_tools.MailMessage
+
+        print(msg.subject)
         if("Alerte Google" in msg.subject):
             alerte = {
                 'mail_id' : msg.uid,

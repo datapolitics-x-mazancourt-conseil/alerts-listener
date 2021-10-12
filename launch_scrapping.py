@@ -63,15 +63,15 @@ context = ssl.create_default_context()
 with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
     server.login(os.environ.get("MAIL_USERNAME"), os.environ.get("MAIL_PASSWORD"))
     
-    sender_email = "alertsoverton@gmail.com"
-    receiver_email = "overton@datapolitics.fr"
+    sender_email = os.environ.get("SENDER_EMAIL")
+    receiver_email = os.environ.get("RECEIVER_EMAIL")
     message = """Subject: [Bot Projet Overton] Du nouveau à scraper ! \n
 
     Bonjour à toute l'équipe, 
 
     A aujourd'hui, j'ai reçu {nb_alertes} alertes Google sur les 38 personnes d'intérets que je suis. 
 
-    Si tous mes scrapers étaient implémentés, je scrappais {nb_scrapping} pages doit voici la liste est en bas de ce mail. 
+    Si tous mes scrapers étaient implémentés, je scrapperais {nb_scrapping} pages dont la liste est en bas de ce mail. 
 
     Si vous deviez implémenter les scrapper par ordre de priorité, voici ou sont les plus gros volumes :
 
