@@ -1,2 +1,2 @@
-15 9 * * *cd /app/ && /app/exec.sh >> /var/log/cron.log 2>&1
+26 9 * * * cd /app/ && /app/exec.sh >> /var/log/cron.log 2>&1
 # remember to end this file with an empty new line
