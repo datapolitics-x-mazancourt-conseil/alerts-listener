@@ -19,6 +19,6 @@ COPY . .
 
 # lance la génération des analyses
 RUN chmod +x exec.sh
-CMD ["cron", "-f"]
+CMD ["sh", "start.sh"]
 
 

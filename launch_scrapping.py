@@ -53,7 +53,6 @@ logging.info("Envoi mail récapitulatif")
 
 import smtplib, ssl
 import os 
-from dotenv import load_dotenv
 
 port = 465  # For SSL
 
