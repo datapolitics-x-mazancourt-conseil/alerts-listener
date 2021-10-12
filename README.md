@@ -19,6 +19,7 @@ Ce projet récupère des Alertes Google envoyées dans un boite mail, et identif
 - Docker et un compte hub.docker.com (si vous souhaitez utiliser Docker)
 - L'application est conçue pour recevoir et envoyer des mails depuis un compte mail. La configuration du compte mail se fait depuis les variables d'environnement (fichier .env à la racine, par exemple). Les 5 variables suivantes sont attendues : 
   - IMAP_HOST, l'hôte sur lesquel sont reçues les alertes (par ex imap.gmail.com)
+  - SMTP_HOST, l'hôte à partir duquel sont envoyés les emails de monitoring (par ex smtp.gmail.com)
   - MAIL_USERNAME, le mail ou sont reçues les alertes (par ex toto@gmail.com)
   - MAIL_PASSWORD, le mot de passe du compte mail (par ex monmotdepasseprefere)
   - SENDER_EMAIL, le mail duquel sera envoyé le récap
@@ -28,4 +29,4 @@ Ce projet récupère des Alertes Google envoyées dans un boite mail, et identif
 ## :white_check_mark: Lancement avec docker ##
 
 
- sudo docker run -e IMAP_HOST=IMAP_HOST -e MAIL_USERNAME=MAIL_USERNAME -e MAIL_PASSWORD=MAIL_PASSWORD -e SENDER_EMAIL=SENDER_EMAIL -e RECEIVER_EMAIL=RECEIVER_EMAIL antoinebacalu/alerts-listener
+ sudo docker run -e IMAP_HOST=IMAP_HOST -e MAIL_USERNAME=MAIL_USERNAME -e MAIL_PASSWORD=MAIL_PASSWORD -e SENDER_EMAIL=SENDER_EMAIL -e RECEIVER_EMAIL=RECEIVER_EMAIL -e SMTP_HOST=SMTP_HOST antoinebacalu/alerts-listener
