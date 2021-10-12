@@ -60,7 +60,7 @@ port = 465  # For SSL
 # Create a secure SSL context
 context = ssl.create_default_context()
 
-with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+with smtplib.SMTP_SSL(os.environ.get("SMTP_HOST"), port, context=context) as server:
     server.login(os.environ.get("MAIL_USERNAME"), os.environ.get("MAIL_PASSWORD"))
     
     sender_email = os.environ.get("SENDER_EMAIL")
